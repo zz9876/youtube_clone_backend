@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRouter from "./routes/index.js";
-
+import cookieParser from "cookie-parser"
 const app=express();
 dotenv.config();
 
@@ -15,6 +15,18 @@ const connect=()=>{
         throw err;
     })
 }
+app.use(cookieParser())
+app.use(express.json())
+
+app.use((err,req,res,next)=>{
+    const status=err.status || 500;
+    const message=err.message || "message went wrong"
+    return res.status(status).json({
+        success:false,
+        status,
+        message
+    })
+})
 app.use('/api',userRouter);
 
 app.listen(8000,()=>{
