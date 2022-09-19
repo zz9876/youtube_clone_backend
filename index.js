@@ -29,9 +29,7 @@ app.use((err,req,res,next)=>{
     })
 })
 app.use('/api',userRouter);
-app.get('/',(req,res)=>{
-    res.send('hello ji')
-})
+
 app.listen(port,()=>{
     connect();
     console.log("connected");
