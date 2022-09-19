@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRouter from "./routes/index.js";
 import cookieParser from "cookie-parser"
+const port=process.env.PORT || 8000;
 const app=express();
 dotenv.config();
 
@@ -29,7 +30,7 @@ app.use((err,req,res,next)=>{
 })
 app.use('/api',userRouter);
 
-app.listen(8000,()=>{
+app.listen(port,()=>{
     connect();
     console.log("connected");
 })
