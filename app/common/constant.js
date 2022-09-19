@@ -15,15 +15,21 @@ export const apiEndpoints = {
   LIKE_VIDEO: "/user/like/:videoId",
   DISLIKE_VIDEO: "/user/dislike/:videoId",
   // video
-  ADD_VIDEO: "/",
-  ADD_VIDEO_ID: "/:id",
-  GET_VIDEO: "/video/find/:id",
-  ADD_VIEW_VIDEO: "/video/view/:id",
-  TREND_VIDEO: "/video/trend",
-  RANDOM_VIDEO: "/video/random",
-  SUB_VIDEO: "/video/sub",
-  GET_BY_TAG_VIDEO: "/video/tags",
-  SEARCH_VIDEO: "/video/search",
+  ADD_VIDEO: "/videos",
+  ADD_VIDEO_ID: "/videos/:id",
+  GET_VIDEO: "/videos/find/:id",
+  ADD_VIEW_VIDEO: "/videos/view/:id",
+  TREND_VIDEO: "/videos/trend",
+  RANDOM_VIDEO: "/videos/random",
+  SUB_VIDEO: "/videos/sub",
+  GET_BY_TAG_VIDEO: "/videos/tags",
+  SEARCH_VIDEO: "/videos/search",
+  
+  //comment
+  ADD_COMMENT:"/comments/",
+  DELETE_COMMENT:"/comments/:id",
+  GET_COMMENT:"/comments/videoId",
+
 };
 export const httpConstants = {
   METHOD_TYPE: {

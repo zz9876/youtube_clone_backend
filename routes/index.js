@@ -4,7 +4,7 @@ import {apiEndpoints} from "../app/common/constant.js"
 import {signIn, signUp} from "../app/modules/auth.js"
 import { verifyToken } from "../app/middleware/verfiyToken.js";
 import { addVideo, addView, getByTag, getVideo, random, search, sub, trend } from "../app/modules/video.js";
-
+import { addComment, deleteComment, getComments } from "../app/modules/comment.js"
 const router=express.Router();
 
 //auth-routes
@@ -33,6 +33,11 @@ router.get(apiEndpoints.SUB_VIDEO,verifyToken, sub)
 router.get(apiEndpoints.GET_BY_TAG_VIDEO, getByTag)
 router.get(apiEndpoints.SEARCH_VIDEO, search)
 
+
 //comment
+router.post(apiEndpoints.ADD_COMMENT, verifyToken, addComment)
+router.delete(apiEndpoints.DELETE_COMMENT, verifyToken, deleteComment)
+router.get(apiEndpoints.GET_COMMENT, getComments)
+
 
 export default router;
