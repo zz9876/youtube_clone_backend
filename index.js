@@ -30,7 +30,7 @@ app.use((err,req,res,next)=>{
 })
 app.use('/api',userRouter);
 app.get('/',(req,res)=>{
-    res.send('hello ji')
+    res.send('hello gautam')
 })
 app.listen(port,()=>{
     connect();
